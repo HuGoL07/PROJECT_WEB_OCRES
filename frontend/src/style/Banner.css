@@ -1,32 +1,30 @@
-.dash-banner {
-
-    display: flex;
-    flex-direction: row;
-    color: black;
-    text-align: right;
-    padding: 12px;
-    border-bottom: solid 3px black;
-    justify-content: space-between; 
-    background-color:bisque;
-}
-
-.dash-title {
-    font-size: 42px;
-    padding-left: 32px;
-    align-self: flex-start;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.dash-welcome{
-    padding-left: 300px;
-    align-self: flex-start;
-    padding-top: 500px;
-
-}
-
-.dash-logo {
-    padding-right: 32px;
-    height: 85px;
-    width: 250px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
+    .dash-banner {
+        display: flex;
+        flex-direction: row;
+        text-align: right;
+        padding: 12px;
+        border-bottom: solid 3px white;
+        justify-content: space-between;
+    }
+    
+    .dash-title {
+        font-size: 42px;
+        padding-left: 32px;
+        align-self: flex-start;
+        color: white;
+        text-shadow: 4px 4px 4px rgb(84, 138, 78);
+    }
+    
+    .dash-welcome {
+        padding-left: 300px;
+        align-self: flex-start;
+        padding-top: 500px;
+        color: white;
+    }
+    
+    .dash-logo {
+        padding-right: 32px;
+        height: 85px;
+        width: 250px;
+        filter: drop-shadow(0px 4px 4px rgba(253, 247, 247, 0.767));
+    }
