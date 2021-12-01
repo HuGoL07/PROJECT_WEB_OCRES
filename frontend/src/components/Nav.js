@@ -66,10 +66,10 @@ function Nav() {
         /li> 
 
         <
-        /ul>  <
-        /div> <
-        /animated.div>      <
-        /div>
+        /ul>  < /
+        div > <
+        /animated.div>      < /
+        div >
 
     ) : (
 
@@ -82,8 +82,8 @@ function Nav() {
         onClick = {
             () => setIsOpen(true)
         } >
-        Ouvrir le menu < /h2>  <
-        /div>
+        Ouvrir le menu < /h2>  < /
+        div >
 
     )
 }
