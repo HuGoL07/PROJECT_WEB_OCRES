@@ -1,0 +1,61 @@
+/*   ----------   WIDGET 1  -------------*/
+.widget1-container{
+    display: flex;
+    top: 20px;
+    left: 200px;
+    width: 575px;
+    height: 240px;
+    
+
+    background: #4ACB9C;
+    border-radius: 15px;
+}
+
+.widget1-banner{
+    position: absolute;
+    width: 575px;
+    height: 43px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.widget1-title {
+    position: absolute;
+    top: -15px;
+    left: 50px;
+	color:white;
+}
+
+/*   ----------   WIDGET 2  -------------*/
+
+.widget2-container{
+    display: flex;
+    width: 312px;
+    height: 240px;
+    left: 850px;
+    top: 20px;
+
+    background: #4ACB9C;
+    border-radius: 15px;
+}
+
+.widget2-banner{
+    position: absolute;
+    width: 312px;
+    height: 43px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.widget2-title {
+    position: absolute;
+    top: -15px;
+    left: 50px;
+	color:white;
+}
