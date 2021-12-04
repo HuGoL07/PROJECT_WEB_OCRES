@@ -1,0 +1,5 @@
+.widget_container {
+    display: flex;
+    flex-direction: column;
+    size: 200px;
+}
