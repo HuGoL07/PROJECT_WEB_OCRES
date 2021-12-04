@@ -1,0 +1,152 @@
+.main-comportement{
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    /*justify-content: space-evenly;*/
+}
+
+.navbar_open {
+    color: white;
+    padding-left: 32px;
+    width: 200px;
+}
+
+.navbar_closed {
+    color: white;
+    padding-left: 32px;
+    width: 200px
+}
+
+.navbarMenu {
+    margin-bottom: 20px;
+}
+
+.navbarTitle {
+    font-style: 13px;
+    padding-left: 25px;
+    color: rgb(197, 194, 194);
+}
+
+.navbarList {
+    list-style: none;
+    padding: 0%;
+}
+
+.navbarListItem {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.sidebarListItem.active,
+.sidebarListItem:hover {
+    background-color: rgb(240, 240, 255);
+}
+
+.sierbarIcon {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.navbar-toggle-title {
+    padding-left: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(253, 247, 247, 0.767));
+    cursor: pointer;
+}
+
+li {
+    color: #fff;
+    background-color: #333;
+    transition: all 1s ease-out;
+}
+
+li:hover,
+li:focus {
+    color: #333;
+    background-color: #fff;
+}
+
+.globalWidgets-Container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom : 100px;
+    justify-content: space-evenly;
+    padding-left: 100px;
+    width: 1050px;
+
+}
+
+/*   ----------   WIDGET 1  -------------*/
+.widget1-container{
+    width: 575px;
+    height: 240px;
+    margin-bottom: 50px;
+    background: #4ACB9C;
+    border-radius: 15px;
+    filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.5));
+}
+
+.widget1-banner{
+    position: absolute;
+    margin-bottom: 0px;
+    width: 575px;
+    height: 50px;
+    background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.widget1-title {
+	position: absolute;
+    width: 272px;
+    height: 29px;
+    left: 23px;
+    top: 11px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+}
+
+/*   ----------   WIDGET 2  -------------*/
+
+.widget2-container{
+    width: 312px;
+    height: 240px;
+    margin-bottom: 50px;
+    background: #4ACB9C;
+    border-radius: 15px;
+    filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.5));
+}
+
+.widget2-banner{
+    width: 312px;
+    height: 50px;
+    position: absolute;
+    margin-bottom: 0px;
+
+    background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.widget2-title {
+    position: absolute;
+    width: 272px;
+    height: 29px;
+    left: 23px;
+    top: 11px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+}
