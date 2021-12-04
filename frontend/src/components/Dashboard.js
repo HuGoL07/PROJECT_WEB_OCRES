@@ -10,15 +10,12 @@ export default function Dashboard({ code }) {
 
     const access_token = UseAuth(code)
 
-    return ( <
-        div >
-        <
-        Banner / >
-        <
-        Nav / >
-        <
-        SearchWidget accessToken = { access_token }
-        /> { /* {code} */ } <
-        /div>
+    return ( 
+    <div>
+        <Banner / >
+        <Nav / >
+        <SearchWidget accessToken = { access_token } />  
+
+    </div>
     )
 }

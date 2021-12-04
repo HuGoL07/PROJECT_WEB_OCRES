@@ -14,6 +14,7 @@ export default function SearchWidget({ accessToken }) {
 
     const [search, setSearch] = useState("")
     const [searchResults, setSearchResults] = useState([])
+
     console.log(searchResults)
 
     useEffect(() => {
@@ -69,17 +70,16 @@ export default function SearchWidget({ accessToken }) {
                                 ))
                             } 
                             </div>   */
-        } <
-        div className = "displayed_content" > {
-            searchResults.map(track => ( <
-                TrackSearchResult track = { track }
-                key = { track.uri }
+        } 
+        <div className = "displayed_content" > {
+            searchResults.map(track => ( 
+                <TrackSearchResult track = { track }
+                    key = { track.uri }
                 />
             ))
-        } <
-        /div>
+        } 
+        </div>
 
-        <
-        /Container>
+        </Container>
     )
 }
