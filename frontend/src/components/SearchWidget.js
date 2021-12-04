@@ -55,19 +55,31 @@ export default function SearchWidget({ accessToken }) {
         placeholder = "Chercher musique"
         value = { search }
         onChange = { e => setSearch(e.target.value) }
+        style = {
+            { width: '50%' } }
         />   
 
-        <
-        div className = "flex-grow-1 my-2"
-        style = {
-            { overflowY: "auto", color: "white" } } > {
+        {
+            /* <div className = "flex-grow-1 my-2"
+                            style = {
+                                { overflowY: "auto", color: "white" } } > {
+                                searchResults.map(track => ( 
+                                    <TrackSearchResult track = { track }
+                                    key = { track.uri } />
+                                ))
+                            } 
+                            </div>   */
+        } <
+        div className = "displayed_content" > {
             searchResults.map(track => ( <
                 TrackSearchResult track = { track }
                 key = { track.uri }
                 />
             ))
         } <
-        /div>  <
+        /div>
+
+        <
         /Container>
     )
 }
