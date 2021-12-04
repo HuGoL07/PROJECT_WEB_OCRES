@@ -5,17 +5,27 @@ import Banner from './Banner'
 import Nav from './Nav'
 import SpotifyWebApi from 'spotify-web-api-node'
 import SearchWidget from './SearchWidget'
+import CreatePlaylist from './CreatePlaylist'
 
 export default function Dashboard({ code }) {
 
     const access_token = UseAuth(code)
 
-    return ( 
-    <div>
-        <Banner / >
-        <Nav / >
-        <SearchWidget accessToken = { access_token } />  
+    return ( <
+        div >
+        <
+        Banner / >
+        <
+        Nav / >
 
-    </div>
+        <
+        CreatePlaylist accessToken = { access_token }
+        />
+
+        { /* <SearchWidget accessToken = { access_token } />   */ }
+
+
+        <
+        /div>
     )
 }
