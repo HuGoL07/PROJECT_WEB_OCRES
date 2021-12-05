@@ -3,6 +3,7 @@ import React from 'react'
 import logospotify from '../assets/logospotify.png'
 import { useSpring, animated, config } from 'react-spring'
 import { useState } from 'react'
+import Login from './Login'
 
 /*
 function Welcome() {
@@ -27,6 +28,7 @@ export default function Banner() {
     const props_banner = useSpring({ to: { opacity: 1 }, from: { opacity: -1 }, delay: 1000 })
     const props_banner_title = useSpring({ to: { opacity: 1 }, from: { opacity: -1 }, delay: 2000 })
     const props_banner_logo = useSpring({ to: { opacity: 1 }, from: { opacity: -1 }, delay: 2500 })
+    const props_banner_login = useSpring({ to: { opacity: 1 }, from: { opacity: -1 }, delay: 3000 })
     //const welcome = Welcome();
 
     return (<animated.div style={props_banner}>
@@ -35,7 +37,12 @@ export default function Banner() {
                 <animated.div style={props_banner_title}>
                     <h1 className='dash-title'>Dashboard</h1>
                 </animated.div>
-
+                
+{/*                 
+                <animated.div style={props_banner_login}>
+                    <Login/>
+                </animated.div> */}
+                
                 <animated.div style={props_banner_logo}>
                     <img src={logospotify} alt='Application musicale' className='dash-logo' />
                 </animated.div>
