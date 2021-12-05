@@ -40,6 +40,7 @@ export default function CreatePlaylist({ accessToken }) {
                 console.log('Ok. Playlist created!');
                 playlistId = res.body['id'];
                 console.log(res)
+                alert('Felicitations, vous pourrez vous enjailler en écoutant votre playlist ' + namePlaylist)
 
             }, [accessToken]).catch(err => {
                 console.log(err)
@@ -91,8 +92,8 @@ export default function CreatePlaylist({ accessToken }) {
             }
         } >
         Creer playlist <
-        /a>   <
-        /div>  <
+        /a>   < /
+        div > <
         /Container>
     )
 
