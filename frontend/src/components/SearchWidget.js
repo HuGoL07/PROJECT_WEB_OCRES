@@ -6,14 +6,16 @@ import '../style/SearchWidget.css'
 import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
 
+
 const spotifyApi = new SpotifyWebApi({
-    clientId: "18444da77ec54503b5cc6b14e953e402"
+    clientId: "c28c3a1f2ef7456c8f34324844a26c65"
 })
 
 export default function SearchWidget({ accessToken }) {
 
     const [search, setSearch] = useState("")
     const [searchResults, setSearchResults] = useState([])
+
 
     console.log(searchResults)
 
@@ -27,8 +29,10 @@ export default function SearchWidget({ accessToken }) {
         if (!accessToken) return
         let cancel = false
 
+        
         spotifyApi.searchTracks(search).then(res => {
             if (cancel) return
+            
             setSearchResults(res.body.tracks.items.map(track => {
 
                 const smallestAlbumImage = track.album.images.reduce((smallest,
@@ -43,16 +47,20 @@ export default function SearchWidget({ accessToken }) {
                     albumUrl: smallestAlbumImage.url
 
                 }
-            }))
+           
+                
+            })) 
         })
-
+        
+        
         return () => cancel = true
     }, [search, accessToken])
 
-    return ( <
-        Container className = 'widget_container' >
-        <
-        Form.Control type = "search"
+
+
+    return ( 
+        <Container className = 'widget_container'>
+        <Form.Control type = "search"
         placeholder = "Chercher musique"
         value = { search }
         onChange = { e => setSearch(e.target.value) }
@@ -61,15 +69,12 @@ export default function SearchWidget({ accessToken }) {
         />   
 
         {
-            /* <div className = "flex-grow-1 my-2"
-                            style = {
-                                { overflowY: "auto", color: "white" } } > {
-                                searchResults.map(track => ( 
-                                    <TrackSearchResult track = { track }
-                                    key = { track.uri } />
-                                ))
-                            } 
-                            </div>   */
+            <div className = "flex-grow-1 my-2"
+                style = {
+                    { overflowY: "auto", color: "white" } } > {
+                            searchResults.map(track => ( <TrackSearchResult track = { track }key = { track.uri } />))
+                    } 
+            </div>   
         } 
         <div className = "displayed_content" > {
             searchResults.map(track => ( 

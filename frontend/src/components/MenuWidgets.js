@@ -1,17 +1,22 @@
 import React from 'react'
-/*import '../style/Widget.css'
-import '../style/Nav.css'*/
 import '../style/MenuWidgets.css'
 import { useState, ueEffect } from 'react'
 import { Widgets } from "@mui/icons-material"
 import { useSpring, animated, config } from 'react-spring'
+import CreatePlaylist from './CreatePlaylist'
+import SpotifyWebApi from 'spotify-web-api-node'
+import UseAuth from './UseAuth'
+import SearchWidget from './SearchWidget'
 
-function MenuWidgets() {
 
+function MenuWidgets({ code }) {
+
+    const access_token = UseAuth(code)
     const [isOpen, setIsOpen] = useState(false)
     const props_menu = useSpring({ to: { opacity: 1 }, from: { opacity: -1 }, delay: 1000 })
     const title = 'Recommandation de titres'
     const title2 = 'Sauvegarder un titre'
+    
 
     return isOpen ? (
 
@@ -52,6 +57,7 @@ function MenuWidgets() {
                                 <div className='widget1-banner'>
                                     <div className='widget1-title'>{title} </div>
                                 </div>
+                                <CreatePlaylist accessToken = { access_token }/>
                             </div>
 
                 {/*--- WIDGET 2 ---*/}
@@ -62,9 +68,12 @@ function MenuWidgets() {
                             </div>
 
                 {/*--- WIDGET 3 ---*/}
-                            <div className='widget1-container'>
-                                <div className='widget1-banner'>
-                                    <div className='widget1-title'> Ajouter une playlist </div>
+                            <div className='widget3-container'>
+                                <div className='widget3-banner'>
+                                    <div className='widget3-title'> Ajouter une playlist </div>
+                                </div>
+                                <div className='search-container'>
+                                    <SearchWidget accessToken = { access_token } />
                                 </div>
                             </div>
 
@@ -102,6 +111,7 @@ function MenuWidgets() {
                         <div className='widget1-banner'>
                             <div className='widget1-title'>{title} </div>
                         </div>
+                        <CreatePlaylist accessToken = { access_token }/>
                     </div>
 
                     {/*--- WIDGET 2 ---*/}
@@ -112,9 +122,12 @@ function MenuWidgets() {
                     </div>
 
                     {/*--- WIDGET 3 ---*/}
-                    <div className='widget1-container'>
-                        <div className='widget1-banner'>
-                            <div className='widget1-title'> Ajouter une playlist </div>
+                    <div className='widget3-container'>
+                        <div className='widget3-banner'>
+                            <div className='widget3-title'> Ajouter une playlist </div>
+                        </div>
+                        <div className='search-container'>
+                            <SearchWidget accessToken = { access_token } />
                         </div>
                     </div>
 

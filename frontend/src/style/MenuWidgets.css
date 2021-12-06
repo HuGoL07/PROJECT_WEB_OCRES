@@ -1,24 +1,36 @@
 .main-comportement{
     display: flex;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
-    /*justify-content: space-evenly;*/
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 700px) {
+    .widget1-container, .widget2-container, .widget3-container {
+      flex-direction: column;
+      flex: 100%;
+    }
 }
 
 .navbar_open {
     color: white;
-    padding-left: 32px;
-    width: 200px;
+    padding-left: 30px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar_closed {
     color: white;
-    padding-left: 32px;
-    width: 200px
+    padding-left: 30px;
+    width: 280px
 }
 
 .navbarMenu {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbarTitle {
@@ -30,7 +42,10 @@
 .navbarList {
     list-style: none;
     padding: 0%;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .navbarListItem {
     padding: 20px;
@@ -40,20 +55,42 @@
     border-radius: 5px;
 }
 
+
+@media (max-width: 1300px) {
+    .navbarList{
+        flex-direction: row;
+    }
+    .navbar_open{
+        width: 100%;
+    }
+    .navbar_closed{
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbarList{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .navbarListItem{
+        flex-direction: column;
+    }
+    .navbar_open{
+        width : 100%;
+    }
+}
+
 .sidebarListItem.active,
 .sidebarListItem:hover {
     background-color: rgb(240, 240, 255);
 }
 
-.sierbarIcon {
-    margin-right: 5px;
-    font-size: 20px;
-}
-
 .navbar-toggle-title {
     padding-left: 10px;
     filter: drop-shadow(0px 4px 4px rgba(253, 247, 247, 0.767));
-    cursor: pointer;
+    cursor: pointer;   
 }
 
 li {
@@ -76,10 +113,10 @@ li:focus {
     justify-content: space-evenly;
     padding-left: 100px;
     width: 1050px;
-
 }
 
-/*   ----------   WIDGET 1  -------------*/
+
+/*   ----------   WIDGET 1   -------------*/
 .widget1-container{
     width: 575px;
     height: 240px;
@@ -92,7 +129,7 @@ li:focus {
 .widget1-banner{
     position: absolute;
     margin-bottom: 0px;
-    width: 575px;
+    width: 100%;
     height: 50px;
     background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
     border-radius: 15px 15px 0px 0px;
@@ -114,7 +151,7 @@ li:focus {
     color: #FFFFFF;
 }
 
-/*   ----------   WIDGET 2  -------------*/
+/*   ----------   WIDGET 2   -------------*/
 
 .widget2-container{
     width: 312px;
@@ -126,7 +163,7 @@ li:focus {
 }
 
 .widget2-banner{
-    width: 312px;
+    width: 100%;
     height: 50px;
     position: absolute;
     margin-bottom: 0px;
@@ -138,6 +175,52 @@ li:focus {
 .widget2-title {
     position: absolute;
     width: 272px;
+    height: 29px;
+    left: 23px;
+    top: 11px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+}
+
+/*   ----------   WIDGET 3   -------------*/
+
+.widget3-container{
+    width: 575px;
+    height: 240px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background: #4ACB9C;
+    border-radius: 15px;
+    filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.5));
+}
+
+.widget3-banner{
+    width: 100%;
+    height: 50px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+
+    background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.search-container{
+    width: 100%;
+    height: 190px;
+    
+    overflow-y: scroll;
+}
+
+.widget3-title {
+    position: absolute;
+    width: 575px;
     height: 29px;
     left: 23px;
     top: 11px;

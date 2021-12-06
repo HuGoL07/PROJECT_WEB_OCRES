@@ -6,6 +6,7 @@ import '../style/SearchWidget.css'
 import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
 import { CleaningServices } from '@mui/icons-material'
+import '../style/CreatePlaylist.css'
 
 
 const spotifyApi = new SpotifyWebApi({
@@ -50,7 +51,7 @@ export default function CreatePlaylist({ accessToken }) {
 
     return (
 
-        <Container >
+        <Container className = 'playlist_container'> 
         <Form.Control type = "namePlaylist"
         placeholder = "Nom de la playlist que vous voulez créer"
         value = { namePlaylist }
