@@ -7,15 +7,15 @@ import CreatePlaylist from './CreatePlaylist'
 import SpotifyWebApi from 'spotify-web-api-node'
 import UseAuth from './UseAuth'
 import SearchWidget from './SearchWidget'
-
+import GetInfosUser from './GetInfosUser'
 
 function MenuWidgets({ code }) {
 
     const access_token = UseAuth(code)
     const [isOpen, setIsOpen] = useState(false)
     const props_menu = useSpring({ to: { opacity: 1 }, from: { opacity: -1 }, delay: 1000 })
-    const title = 'Recommandation de titres'
-    const title2 = 'Sauvegarder un titre'
+    const title = 'Créer une playlist'
+    const title2 = 'Votre profil'
     
 
     return isOpen ? (
@@ -65,12 +65,13 @@ function MenuWidgets({ code }) {
                                 <div className='widget2-banner'>
                                     <div className='widget2-title'>{title2} </div>
                                 </div>
+                                <GetInfosUser accessToken = { access_token }/>
                             </div>
 
                 {/*--- WIDGET 3 ---*/}
                             <div className='widget3-container'>
                                 <div className='widget3-banner'>
-                                    <div className='widget3-title'> Ajouter une playlist </div>
+                                    <div className='widget3-title'> Rechercher une musique </div>
                                 </div>
                                 <div className='search-container'>
                                     <SearchWidget accessToken = { access_token } />
@@ -78,9 +79,9 @@ function MenuWidgets({ code }) {
                             </div>
 
                 {/*--- WIDGET 4 ---*/}
-                            <div className='widget2-container'>
-                                <div className='widget2-banner'>
-                                    <div className='widget2-title'> Supprimer un titre </div>
+                            <div className='widget4-container'>
+                                <div className='widget4-banner'>
+                                    <div className='widget4-title'> Supprimer un titre </div>
                                 </div>
                             </div>
 
@@ -92,10 +93,11 @@ function MenuWidgets({ code }) {
                             </div>
 
                 {/*--- WIDGET 6 ---*/}
-                            <div className='widget2-container'>
-                                <div className='widget2-banner'>
-                                    <div className='widget2-title'> Notre API</div>
+                            <div className='widget6-container'>
+                                <div className='widget6-banner'>
+                                    <div className='widget6-title'> Notre API</div>
                                 </div>
+                                
                             </div>
             </div>
         </div>)
@@ -119,12 +121,13 @@ function MenuWidgets({ code }) {
                         <div className='widget2-banner'>
                             <div className='widget2-title'>{title2} </div>
                         </div>
+                        <GetInfosUser accessToken = { access_token }/>
                     </div>
 
                     {/*--- WIDGET 3 ---*/}
                     <div className='widget3-container'>
                         <div className='widget3-banner'>
-                            <div className='widget3-title'> Ajouter une playlist </div>
+                            <div className='widget3-title'> Rechercher une musique </div>
                         </div>
                         <div className='search-container'>
                             <SearchWidget accessToken = { access_token } />
@@ -132,9 +135,9 @@ function MenuWidgets({ code }) {
                     </div>
 
                     {/*--- WIDGET 4 ---*/}
-                    <div className='widget2-container'>
-                        <div className='widget2-banner'>
-                            <div className='widget2-title'> Supprimer un titre </div>
+                    <div className='widget4-container'>
+                        <div className='widget4-banner'>
+                            <div className='widget4-title'> Supprimer un titre </div>
                         </div>
                     </div>
 
@@ -146,10 +149,11 @@ function MenuWidgets({ code }) {
                     </div>
 
                     {/*--- WIDGET 6 ---*/}
-                    <div className='widget2-container'>
-                        <div className='widget2-banner'>
-                            <div className='widget2-title'> Notre API</div>
+                    <div className='widget6-container'>
+                        <div className='widget6-banner'>
+                            <div className='widget6-title'> Notre API</div>
                         </div>
+                        
                     </div>
             </div>
         </div>)

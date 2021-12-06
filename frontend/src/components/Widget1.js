@@ -1,7 +1,7 @@
 //Ce premier widget aura pour but d'afficher un album de PNL*/
 import '../style/Widget1.css'
 
-import React from 'react'
+/*import React from 'react'
 
 export default function Widget1() {
 
@@ -17,4 +17,4 @@ export default function Widget1() {
             </iframe >
         </div>
     )
-}
+}*/

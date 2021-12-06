@@ -76,7 +76,7 @@ export default function CreatePlaylist({ accessToken }) {
             { width: '50%' }
         }/>          
 
-        <div className = "login_button" >
+        <div className = "create_button" >
 
         <a className = "btn btn-success btn-lg"
         onClick = {

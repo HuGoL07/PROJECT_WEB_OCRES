@@ -3,11 +3,11 @@
     flex-direction: column;
     size: 100px;
     margin-top: 10px;
+    margin-left: 20px;
 }
 
 .search_bar {
     display: flex;
-    
 }
 
 .displayed_content {
