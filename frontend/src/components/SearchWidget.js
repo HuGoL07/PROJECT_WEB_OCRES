@@ -46,58 +46,43 @@ export default function SearchWidget({ accessToken }) {
                 }
             }))
         })
-
         return () => cancel = true
     }, [search, accessToken])
 
-    // function AddToSavedTracks(){
+    function AddToSavedTracks({track}){
+        spotifyApi.addToMySavedTracks(track.uri).then( res => {
+            console.log('Son ajouté à votre playlist ' +track.uri)
+        }).catch(err => {
+             console.log(err)
+             console.log('erreurs')
+             console.log(track.uri)
+         }, [accessToken])
+    }
 
+    // onClick = {
+    //     ({ track }) => {
+    //         spotifyApi.addToMySavedTracks()
+    //         spotifyApi.addToMySavedTracks(['20I6sIOMTCkB6w7ryavxtO']).then(res => {
+    //             // console.log('Son ajouté à votre playlist ' +track.uri)
+    //             console.log('ok son ajouté')
+    //         }).catch(err => {
+    //             console.log(err)
+    //             console.log('erreurs')
+    //         })
+    //     }
 
-    //     spotifyApi.addToMySavedTracks(songUri).then( res => {
-    //         console.log('Son ajouté à votre playlist ' +songUri)
-    //     }).catch(err => {
-    //         console.log(err)
-    //         console.log('erreurs')
-    //         console.log(songUri)
-    //     }, [accessToken])
-    // }
+    return ( 
+        <Container className = 'widget_container' >
+            <Form.Control type = "search" placeholder = "Chercher musique" value = { search } onChange = { e => setSearch(e.target.value) }
+            style = {
+                { width: '50%' }
+            }/>   
 
-    return ( <
-        Container className = 'widget_container' >
-        <
-        Form.Control type = "search"
-        placeholder = "Chercher musique"
-        value = { search }
-        onChange = { e => setSearch(e.target.value) }
-        style = {
-            { width: '50%' }
-        }
-        />   
+            <div className = "displayed_content" > {searchResults.map(track => ( <TrackSearchResult track = { track }
+                        key = { track.uri }/>))
+                    } 
+            </div>
 
-        <
-        div className = "displayed_content"
-        onClick = {
-            ({ track }) => {
-                spotifyApi.addToMySavedTracks()
-                spotifyApi.addToMySavedTracks(['20I6sIOMTCkB6w7ryavxtO']).then(res => {
-                    // console.log('Son ajouté à votre playlist ' +track.uri)
-                    console.log('ok son ajouté')
-                }).catch(err => {
-                    console.log(err)
-                    console.log('erreurs')
-                })
-            }
-        } > {
-
-            searchResults.map(track => ( <
-                TrackSearchResult track = { track }
-                key = { track.uri }
-                />
-            ))
-        } <
-        /div>
-
-        <
-        /Container>
+        </Container>
     )
 }

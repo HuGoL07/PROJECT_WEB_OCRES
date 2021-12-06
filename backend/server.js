@@ -7,9 +7,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//     res.render('index', { title: 'Express' });
-// });
+/*GET data from .json*/
+const artistData = require("./data/data.json");
+app.get("/artist", function(req, res) {
+    res.send(artistData);
+});
+
 
 app.listen(5000, () => console.log("Server Running..."));

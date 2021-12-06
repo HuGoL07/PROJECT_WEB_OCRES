@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { useEffect, useState } from 'react'
 import SpotifyWebApi from 'spotify-web-api-node'
-import InfoUserResult from './InfoUserResult'
 import { Container, Form } from 'react-bootstrap'
 import { recomposeColor } from '@mui/system'
 
@@ -25,7 +24,6 @@ export default function GetInfosUser({ accessToken }) {
     }, [accessToken])
 
     spotifyApi.getMe().then(res => {
-
         console.log(res)
         console.log('Retrieved data for ' + res.body['display_name'])
             // "Email is farukemresahin@gmail.com"
@@ -40,24 +38,18 @@ export default function GetInfosUser({ accessToken }) {
         setMailUser(res.body.email)
         setTypeAccount(res.body.product)
         setImageUser(res.body.images[0].url)
-
-
     }).catch(err => {
         console.log('smthg went wrong: ' + err.message)
     })
 
-
-    return (
-
-        <
+    return ( <
         Container >
         <
         div > { nameUser } { mailUser } { typeAccount } <
         img src = { imageUser }
         alt = "new" / >
-
         <
-        /div>  <
+        /div>   <
         /Container>
     )
 }

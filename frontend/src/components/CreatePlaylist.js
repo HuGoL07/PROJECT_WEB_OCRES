@@ -7,7 +7,6 @@ import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
 import { CleaningServices } from '@mui/icons-material'
 
-
 const spotifyApi = new SpotifyWebApi({
     clientId: "18444da77ec54503b5cc6b14e953e402"
 })
