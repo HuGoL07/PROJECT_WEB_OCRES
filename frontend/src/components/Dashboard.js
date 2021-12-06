@@ -6,6 +6,7 @@ import Nav from './Nav'
 import SpotifyWebApi from 'spotify-web-api-node'
 import SearchWidget from './SearchWidget'
 import CreatePlaylist from './CreatePlaylist'
+import GetInfosUser from './GetInfosUser'
 
 export default function Dashboard({ code }) {
 
@@ -19,11 +20,17 @@ export default function Dashboard({ code }) {
         Nav / >
 
         <
+        div className = 'container' >
+        <
         CreatePlaylist accessToken = { access_token }
-        />
-
-        { /* <SearchWidget accessToken = { access_token } />   */ }
-
+        className = 'widget_playlist' / >
+        <
+        SearchWidget accessToken = { access_token }
+        className = 'widget_search' / >
+        <
+        GetInfosUser accessToken = { access_token }
+        /> <
+        /div>
 
         <
         /div>

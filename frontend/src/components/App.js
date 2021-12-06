@@ -8,44 +8,13 @@ import Dashboard from './Dashboard'
 import Login from './Login'
 import UseAuth from './UseAuth'
 
+///Permet de récupérer le token affiché dans l'url et de le passer en paramètre à Dashboard
 const code = new URLSearchParams(window.location.search).get('code')
 
 function App() {
     return code ? <Dashboard code = {code}/> : <Login/ >
 }
 
-
-// function App(){
-//     return code ? 
-//         <div>
-//             <Banner/>
-//             <Nav/>
-
-//             {/* <div className = "widget_container">
-//                 <Widget1/>
-//             </div>  */}
-        
-//         </div> : 
-
-//         <Login/>
-        
-// }
-
-
-// function App() {
-//     return ( 
-//         <div>
-       
-//             <Banner/>
-//             <Nav/>
-            
-//             <div className = "widget_container">
-//                 <Widget1/>
-//             </div> 
-             
-//         </div>
-//     )
-// } 
 
 
 export default App

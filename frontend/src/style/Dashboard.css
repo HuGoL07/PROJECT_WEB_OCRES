@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.widget_playlist{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.widget_search{
+    display: flex;
+    justify-content: flex-start;
+}
