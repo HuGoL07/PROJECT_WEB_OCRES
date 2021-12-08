@@ -33,22 +33,22 @@ function MenuWidgets({ code }) {
                         <h2 className='navbarTitle' > Menu </h2>
                         <ul className='navbarList' >
                             <li className='navbarListItem active' >
-                                <Widgets className='navbarIcon' /> Widget1 </li>
+                                <Widgets className='navbarIcon' /> Créer une playlist </li>
 
                             <li className='navbarListItem' >
-                                <Widgets className='navbarIcon' /> Widget2 </li>
+                                <Widgets className='navbarIcon' /> Votre profil </li>
 
                             <li className='navbarListItem' >
-                                <Widgets className='navbarIcon' /> Widget3 </li>
+                                <Widgets className='navbarIcon' /> Rechercher une musique </li>
 
                             <li className='navbarListItem' >
-                                <Widgets className='navbarIcon' /> Widget4 </li>
+                                <Widgets className='navbarIcon' /> Top 4 artistes français </li>
 
                             <li className='navbarListItem' >
-                                <Widgets className='navbarIcon' /> Widget5 </li>
+                                <Widgets className='navbarIcon' /> Ajouter un album </li>
 
                             <li className='navbarListItem' >
-                                <Widgets className='navbarIcon' /> Widget6 </li>
+                                <Widgets className='navbarIcon' /> Votre collection </li>
 
                         </ul>
                     </div >
@@ -95,7 +95,7 @@ function MenuWidgets({ code }) {
                 {/*--- WIDGET 5 ---*/}
                             <div className='widget5-container'>
                                 <div className='widget5-banner'>
-                                    <div className='widget5-title'> Vos titres </div>
+                                    <div className='widget5-title'> Ajouter un album </div>
                                 </div>
                                 <div className='add_container'> 
                                     <AddTracksToBdd/> 
@@ -157,7 +157,7 @@ function MenuWidgets({ code }) {
                     {/*--- WIDGET 5 ---*/}
                     <div className='widget5-container'>
                         <div className='widget5-banner'>
-                            <div className='widget5-title'>Vos titres </div>
+                            <div className='widget5-title'> Ajouter un album </div>
                         </div>
                         <div className='add_container'> 
                             <AddTracksToBdd/> 

@@ -36,7 +36,7 @@ function GetDataFromBdd() {
 
 return ( 
     
-    <div >
+    <div className = 'data-container'>
     <h3 > Artist List </h3> {
         dataList.map((val, key) => {
             return ( 
@@ -53,7 +53,7 @@ return (
 
                 <button onClick = {
                     () => updateName(val._id) } > Mettre à jour </button> 
-                    <button onClick = {
+                <button onClick = {
                     () => deleteArtist(val._id) } > Supprimer </button> 
                 </div>
             )

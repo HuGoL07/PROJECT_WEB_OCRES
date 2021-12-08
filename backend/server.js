@@ -39,16 +39,17 @@ app.get("/read", async(req, res) => {
 });
 
 app.put("/update", async(req, res) => {
-    const newNameArtist = req.body.newNameArtist;
+    const newArtistName = req.body.newArtistName;
     const id = req.body.id;
 
     try {
         await ArtistModel.findById(id, (err, updatedName) => {
-            updatedName.artistName = newNameArtist;
+            updatedName.artistName = newArtistName;
             updatedName.save();
             res.send("update");
         });
     } catch (err) {
+        console.log('pb update')
         console.log(err)
     }
 });
