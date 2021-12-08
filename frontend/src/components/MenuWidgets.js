@@ -10,6 +10,7 @@ import SearchWidget from './SearchWidget'
 import GetInfosUser from './GetInfosUser'
 import Graphic from './Graphic'
 import '../style/Graphic.css'
+import AddTracksToBdd from './AddTracksToBdd'
 
 function MenuWidgets({ code }) {
 
@@ -91,9 +92,12 @@ function MenuWidgets({ code }) {
                             </div>
 
                 {/*--- WIDGET 5 ---*/}
-                            <div className='widget1-container'>
-                                <div className='widget1-banner'>
-                                    <div className='widget1-title'> Vos titres </div>
+                            <div className='widget5-container'>
+                                <div className='widget5-banner'>
+                                    <div className='widget5-title'> Vos titres </div>
+                                </div>
+                                <div className='add_container'> 
+                                    <AddTracksToBdd/> 
                                 </div>
                             </div>
 
@@ -148,9 +152,12 @@ function MenuWidgets({ code }) {
                     </div>
 
                     {/*--- WIDGET 5 ---*/}
-                    <div className='widget1-container'>
-                        <div className='widget1-banner'>
-                            <div className='widget1-title'>Vos titres </div>
+                    <div className='widget5-container'>
+                        <div className='widget5-banner'>
+                            <div className='widget5-title'>Vos titres </div>
+                        </div>
+                        <div className='add_container'> 
+                            <AddTracksToBdd/> 
                         </div>
                     </div>
 

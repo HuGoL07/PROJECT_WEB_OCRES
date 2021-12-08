@@ -6,7 +6,7 @@ const artistSchema = new mongoose.Schema({
         required: true,
     },
     nameAlbum: {
-        type: Number,
+        type: String,
         required: true,
     },
 });
