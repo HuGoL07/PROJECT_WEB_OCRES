@@ -15,8 +15,8 @@ mongoose.connect("mongodb+srv://Roman:roro94220@crud.gthvm.mongodb.net/artist?re
     useNewUrlParser: true,
 });
 
+//POST a new artist by his name with his album's name
 app.post("/insert", async(req, res) => {
-
     const nameArtist = req.body.nameArtist
     const nameAlbum = req.body.nameAlbum
     const artist = new ArtistModel({ artistName: nameArtist, nameAlbum: nameAlbum });
@@ -24,11 +24,13 @@ app.post("/insert", async(req, res) => {
     try {
         await artist.save();
         res.send("inserted data")
+        alert('Le son a bien été ajouté')
     } catch (err) {
         console.log(err)
     }
 });
 
+//GET all the artists in the mongoDb 
 app.get("/read", async(req, res) => {
     ArtistModel.find({}, (err, result) => {
         if (err) {
@@ -38,48 +40,28 @@ app.get("/read", async(req, res) => {
     })
 });
 
+//PUT we want to update the current list of artists
+app.put("/update", async(req, res) => {
+    const newArtistName = req.body.newArtistName;
+    const id = req.body.id;
+
+    try {
+        await ArtistModel.findById(id, (err, updatedName) => {
+            updatedName.artistName = newArtistName;
+            updatedName.save();
+            res.send("update");
+        });
+    } catch (err) {
+        console.log(err)
+    }
+});
+
+//DELETE an artist by id
+app.delete("/delete/:id", async(req, res) => {
+    const id = req.params.id;
+    await ArtistModel.findByIdAndRemove(id).exec();
+    res.send('deleted')
+});
+
+
 app.listen(3002, () => { console.log("Server Running...") });
-
- 
-// /*GET data from .json*/
-// const artistData = require("./data/data.json");
-// app.get("/artist", function(req, res) {
-//     res.send(artistData);
-// });
-
-// const dataPost = require("./data/input_data.json");
-// app.get("/postdata", function(req, res) {
-//     res.send(dataPost);
-// });
-
-// app.post("/postdata", function(req, res) {
-//     if (req.body) {
-//         fs.writeFileSync("./data/input_data.json", JSON.stringify(req.body));
-//         res.send({
-//             message: "Data Saved",
-//         });
-//     } else {
-//         res.status(400).send({
-//             message: "Error No Data",
-//         });
-//     }
-// });
-
-
-// /*PUT data in input_data.json*/
-// const requestOptions = require('./data/input_data.json')
-// app.put("/postdata", (req,res) => {
-//     //Get the name of the artist from request
-//     const { nameArtist } = req.body;
-//     // Get the nbr of albums of this corresponding artist
-//     const { nbrAlbum } = req.body;
-//     //Create new unique id
-//     const _id = _.uniqueId();
-
-//     res.json({
-//         message: 'Just added ${id}',
-//     });
-
-// });
-
-// app.listen(5000, () => console.log("Server Running..."));
