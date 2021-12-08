@@ -24,7 +24,6 @@ export default function GetInfosUser({ accessToken }) {
     }, [accessToken])
 
     spotifyApi.getMe().then(res => {
-
         console.log(res)
         console.log('Retrieved data for ' + res.body['display_name'])
         // "Email is farukemresahin@gmail.com"
@@ -39,8 +38,6 @@ export default function GetInfosUser({ accessToken }) {
         setMailUser(res.body.email)
         setTypeAccount(res.body.product)
         setImageUser(res.body.images[0].url)
-
-
     }).catch(err => {
         console.log('smthg went wrong: ' + err.message)
     })

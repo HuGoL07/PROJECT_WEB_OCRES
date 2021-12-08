@@ -21,6 +21,7 @@
         "react-scripts": "3.2.0",
         "react-spotify-web-playback": "^0.9.1",
         "react-spring": "^9.3.2",
+        "recharts": "^2.1.6",
         "spotify-web-api-node": "^5.0.2"
     },
     "scripts": {

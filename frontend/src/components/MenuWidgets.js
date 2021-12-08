@@ -8,6 +8,8 @@ import SpotifyWebApi from 'spotify-web-api-node'
 import UseAuth from './UseAuth'
 import SearchWidget from './SearchWidget'
 import GetInfosUser from './GetInfosUser'
+import Graphic from './Graphic'
+import '../style/Graphic.css'
 
 function MenuWidgets({ code }) {
 
@@ -81,7 +83,10 @@ function MenuWidgets({ code }) {
                 {/*--- WIDGET 4 ---*/}
                             <div className='widget4-container'>
                                 <div className='widget4-banner'>
-                                    <div className='widget4-title'> Supprimer un titre </div>
+                                    <div className='widget4-title'> Top 4 artistes français </div>
+                                </div>
+                                <div className = 'graph-container'>
+                                    <Graphic/>
                                 </div>
                             </div>
 
@@ -137,14 +142,15 @@ function MenuWidgets({ code }) {
                     {/*--- WIDGET 4 ---*/}
                     <div className='widget4-container'>
                         <div className='widget4-banner'>
-                            <div className='widget4-title'> Supprimer un titre </div>
+                            <div className='widget4-title'> Top 4 artistes français  </div>
                         </div>
+                        <Graphic/>
                     </div>
 
                     {/*--- WIDGET 5 ---*/}
                     <div className='widget1-container'>
                         <div className='widget1-banner'>
-                            <div className='widget1-title'> Vos titres </div>
+                            <div className='widget1-title'>Vos titres </div>
                         </div>
                     </div>
 

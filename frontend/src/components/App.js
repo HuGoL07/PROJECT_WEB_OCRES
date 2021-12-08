@@ -8,6 +8,7 @@ import MenuWidgets from './MenuWidgets'
 import Login from './Login'
 import UseAuth from './UseAuth'
 import TrackSearchResult from './TrackSearchResult'
+import Graphic from './Graphic'
 
 ///Permet de récupérer le token affiché dans l'url et de le passer en paramètre à Dashboard
 const code = new URLSearchParams(window.location.search).get('code')

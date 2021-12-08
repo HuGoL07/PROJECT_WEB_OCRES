@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import UseAuth from './UseAuth'
 import { Container, Form } from 'react-bootstrap'
 import '../style/SearchWidget.css'
 import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
+import { TrackChangesOutlined } from '@mui/icons-material'
 
 const spotifyApi = new SpotifyWebApi({
-    clientId: "c28c3a1f2ef7456c8f34324844a26c65"
+    clientId: "18444da77ec54503b5cc6b14e953e402"
 })
 
 export default function SearchWidget({ accessToken }) {
@@ -29,7 +31,6 @@ export default function SearchWidget({ accessToken }) {
 
         spotifyApi.searchTracks(search).then(res => {
             if (cancel) return
-            
             setSearchResults(res.body.tracks.items.map(track => {
 
                 const smallestAlbumImage = track.album.images.reduce((smallest,
@@ -43,36 +44,44 @@ export default function SearchWidget({ accessToken }) {
                     uri: track.uri,
                     albumUrl: smallestAlbumImage.url,
                 }
-            })) 
+            }))
         })
         return () => cancel = true
     }, [search, accessToken])
 
+    function AddToSavedTracks({track}){
+        spotifyApi.addToMySavedTracks(track.uri).then( res => {
+            console.log('Son ajouté à votre playlist ' +track.uri)
+        }).catch(err => {
+             console.log(err)
+             console.log('erreurs')
+             console.log(track.uri)
+         }, [accessToken])
+    }
+
+    // onClick = {
+    //     ({ track }) => {
+    //         spotifyApi.addToMySavedTracks()
+    //         spotifyApi.addToMySavedTracks(['20I6sIOMTCkB6w7ryavxtO']).then(res => {
+    //             // console.log('Son ajouté à votre playlist ' +track.uri)
+    //             console.log('ok son ajouté')
+    //         }).catch(err => {
+    //             console.log(err)
+    //             console.log('erreurs')
+    //         })
+    //     }
+
     return ( 
-        <Container className = 'widget_container'>
-        <Form.Control type = "search"
-        placeholder = "Chercher musique"
-        value = { search }
-        onChange = { e => setSearch(e.target.value) }
-        style = {
-            { width: '50%' }
-        }/>   
-        
-        {
-            <div className = "flex-grow-1 my-2"
-                style = {
-                    { overflowY: "auto", color: "white" } } > {
-                            searchResults.map(track => ( <TrackSearchResult track = { track }key = { track.uri }/>))
+        <Container className = 'widget_container' >
+            <Form.Control type = "search" placeholder = "Chercher musique" value = { search } onChange = { e => setSearch(e.target.value) }
+            style = {
+                { width: '50%' }
+            }/>   
+
+            <div className = "displayed_content" > {searchResults.map(track => ( <TrackSearchResult track = { track }
+                        key = { track.uri }/>))
                     } 
-            </div>   
-        } 
-        <div className = "displayed_content" > {
-            searchResults.map(track => ( 
-                <TrackSearchResult track = { track }
-                    key = { track.uri }
-                />
-            ))
-        } </div>
+            </div>
 
         </Container>
     )

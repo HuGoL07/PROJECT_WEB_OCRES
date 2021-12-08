@@ -8,7 +8,6 @@ import TrackSearchResult from './TrackSearchResult'
 import { CleaningServices } from '@mui/icons-material'
 import '../style/CreatePlaylist.css'
 
-
 const spotifyApi = new SpotifyWebApi({
     clientId: "c28c3a1f2ef7456c8f34324844a26c65"
 })
