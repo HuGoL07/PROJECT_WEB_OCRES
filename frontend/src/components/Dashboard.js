@@ -23,7 +23,9 @@ export default function Dashboard({ code }) {
         Nav / >
 
         <
-        div className = 'container' > { /* <Graphic / >  */ } { /* <AddTracksToBdd / > */ } <
+        div className = 'container' > { /* <Graphic / >  */ } <
+        AddTracksToBdd / >
+        <
         GetDataFromBdd / > {
             /* <CreatePlaylist accessToken = { access_token }
                                             className = 'widget_playlist' />
@@ -33,9 +35,7 @@ export default function Dashboard({ code }) {
         }
 
         <
-        /div>
-
-        <
+        /div> <
         /div>
     )
 }

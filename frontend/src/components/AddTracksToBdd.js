@@ -13,7 +13,8 @@ function AddTracksToBdd() {
         axios.post("http://localhost:3002/insert", {
             nameArtist: nameArtist,
             nameAlbum: nameAlbum
-        });;
+        });
+        alert('L artiste ' + nameArtist + ' a bien ete ajouté')
     }
     return (
 
@@ -25,14 +26,14 @@ function AddTracksToBdd() {
         onChange = {
             (event) => { setNameArtist(event.target.value) }
         }
-        /> <
-        label > Album name: < /label> <
+        />  <
+        label > Album name: < /label>  <
         input type = "text"
         onChange = {
             (event) => { setNameAlbum(event.target.value) }
         }
-        /> <
-        button onClick = { addToList } > Ajouter a la liste < /button>     <
+        />  <
+        button onClick = { addToList } > Ajouter a la liste < /button>      <
         /div>
     )
 }

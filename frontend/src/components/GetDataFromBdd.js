@@ -26,42 +26,44 @@ function GetDataFromBdd() {
     };
 
     const deleteArtist = (id) => {
-        axios.delete('http://localhost:3002/delete/${id}'), {
+        axios.delete(`http://localhost:3002/delete/${id}`, {
             id: id,
             newArtistName: newArtistName,
         });
-    alert('L artiste a bien ete supprimé ')
-    console.log('Artiste bien supprimer sur votre bdd')
-};
+        alert('L artiste a bien ete supprimé ')
+        console.log('Artiste bien supprimer sur votre bdd')
+    }
 
-return ( <
-    div >
-    <
-    h1 > Food List < /h1> {
-        dataList.map((val, key) => {
-            return ( <
-                div key = { key }
-                className = 'artist' >
-                <
-                h3 > { val.artistName } < /h3>  <
-                h2 > { val.nameAlbum } < /h2> <
-                input type = "text"
-                placeholder = "Nouvel artist"
-                onChange = {
-                    (event) => { setNewArtistName(event.target.value); }
-                }
-                />
+    return ( <
+            div >
+            <
+            h1 > Food List < /h1> {
+            dataList.map((val, key) => {
+                return ( <
+                    div key = { key }
+                    className = 'artist' >
+                    <
+                    h3 > { val.artistName } < /h3>  <
+                    h2 > { val.nameAlbum } < /h2> <
+                    input type = "text"
+                    placeholder = "Nouvel artist"
+                    onChange = {
+                        (event) => { setNewArtistName(event.target.value); }
+                    }
+                    />
 
-                <
-                button onClick = {
-                    () => updateName(val._id) } > Mettre à jour < /button> <
-                button onClick = {
-                    () => deleteArtist(val._id) } > Supprimer < /button> <
-                /div>
-            )
-        })
-    } <
-    /div>
+                    <
+                    button onClick = {
+                        () => updateName(val._id)
+                    } > Mettre à jour < /button> <
+                    button onClick = {
+                        () => deleteArtist(val._id)
+                    } > Supprimer < /button> < /
+                    div >
+                )
+            })
+        } <
+        /div>
 )
 }
 
