@@ -8,6 +8,8 @@ import SearchWidget from './SearchWidget'
 import CreatePlaylist from './CreatePlaylist'
 import GetInfosUser from './GetInfosUser'
 import Graphic from './Graphic'
+import AddTracksToBdd from './AddTracksToBdd'
+import GetDataFromBdd from './GetDataFromBdd'
 
 export default function Dashboard({ code }) {
 
@@ -21,17 +23,13 @@ export default function Dashboard({ code }) {
         Nav / >
 
         <
-        div className = 'container' >
-        <
-        Graphic / > {
-            /* {/* <CreatePlaylist accessToken = { access_token }
-                            className = 'widget_playlist' /> */
-        } {
-            /* <SearchWidget accessToken = { access_token }
-                            className = 'widget_search' / > */
-        } {
-            /* <GetInfosUser accessToken = { access_token }
-                            />  */
+        div className = 'container' > { /* <Graphic / >  */ } { /* <AddTracksToBdd / > */ } <
+        GetDataFromBdd / > {
+            /* <CreatePlaylist accessToken = { access_token }
+                                            className = 'widget_playlist' />
+                        <SearchWidget accessToken = { access_token }
+                                            className = 'widget_search' / > 
+                        <GetInfosUser accessToken = { access_token }/>   */
         }
 
         <

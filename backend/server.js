@@ -1,22 +1,25 @@
 const express = require("express");
-// const cors = require("cors");
-// const bodyParser = require("body-parser");
-// const fs = require("fs");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const fs = require("fs");
 const mongoose = require('mongoose')
 const app = express();
 
 const ArtistModel = require("./models/Data.js")
 
 app.use(express.json());
-// app.use(cors());
-// app.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.json());
 
 mongoose.connect("mongodb+srv://Roman:roro94220@crud.gthvm.mongodb.net/artist?retryWrites=true&w=majority", {
     useNewUrlParser: true,
 });
 
-app.get("/", async(req, res) => {
-    const artist = new ArtistModel({ artistName: "PNL", nameAlbum: "Dans la légende" });
+app.post("/insert", async(req, res) => {
+
+    const nameArtist = req.body.nameArtist
+    const nameAlbum = req.body.nameAlbum
+    const artist = new ArtistModel({ artistName: nameArtist, nameAlbum: nameAlbum });
 
     try {
         await artist.save();
@@ -26,9 +29,18 @@ app.get("/", async(req, res) => {
     }
 });
 
+app.get("/read", async(req, res) => {
+    ArtistModel.find({}, (err, result) => {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result)
+    })
+});
+
 app.listen(3002, () => { console.log("Server Running...") });
 
-
+ 
 // /*GET data from .json*/
 // const artistData = require("./data/data.json");
 // app.get("/artist", function(req, res) {

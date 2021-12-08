@@ -42,8 +42,7 @@ export default function GetInfosUser({ accessToken }) {
         console.log('smthg went wrong: ' + err.message)
     })
 
-    return ( <
-        Container >
+    return ( <Container >
         <
         div > { nameUser } { mailUser } { typeAccount } <
         img src = { imageUser }
