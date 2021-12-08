@@ -335,6 +335,7 @@ li:focus {
     background: #4ACB9C;
     border-radius: 15px;
     filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.5));
+    
 }
 
 .widget6-banner{
@@ -346,6 +347,12 @@ li:focus {
 
     background: linear-gradient(180deg, #314231 0%, rgba(16, 80, 16, 0.95) 100%);
     border-radius: 15px 15px 0px 0px;
+}
+
+.data{
+    height: 240px;
+    flex-direction: row;
+    overflow-x: scroll;
 }
 
 .widget6-title {

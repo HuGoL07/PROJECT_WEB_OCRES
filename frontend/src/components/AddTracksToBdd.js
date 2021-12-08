@@ -12,7 +12,8 @@ function AddTracksToBdd() {
         axios.post("http://localhost:3002/insert", {
             artistName: nameArtist,
             nameAlbum: nameAlbum
-        });;
+        });
+        alert('l artiste ' +nameArtist+ ' a bien ete ajouté')
     }
     return (
 

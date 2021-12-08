@@ -45,14 +45,12 @@ app.post('/login', (req, res) => {
             accessToken: data.body.access_token,
             refreshToken: data.body.refresh_token,
             expiresIn: data.body.expires_in,
-
         })
-        console.log('test requete token')
+        console.log('Connexion à spotify réussie')
 
     }).catch((err) => {
         console.log(err)
         res.sendStatus(400)
-
     })
 })
 

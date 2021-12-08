@@ -13,8 +13,8 @@ Vous pourrez supprimer le contenu de ce README et vous l'approprier en y notant 
 Inspirez-vous des grands repos open sources qui existent sur github. Les informations qui reviennent souvent sont une description du projet (pourquoi, comment...), la maniere de lancer le projet et eventuellement d'y contribuer, une documentation sur des éléments que vous voulez mettre en avant et pour finir les noms des contributeurs.
 
 Widget 1 : créer une playlist en rentrant le nom plus la description (#POST)
-Widget 2 : chercher des sons en rentrant le nom dans la barre de recherche (#)
+Widget 2 : chercher des sons en rentrant le nom dans la barre de recherche (#GET)
 Widget 3 : affiche les infos du user (#GET)
 Widget 4 : Recup data depuis notre api (notre .json) et afficher un graphe en format camembert (#PUT)
-Widget 5 :
+Widget 5 : 
 Widget 6 : 

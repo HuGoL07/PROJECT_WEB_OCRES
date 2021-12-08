@@ -53,4 +53,11 @@ app.put("/update", async(req, res) => {
     }
 });
 
+//DELETE an artist by id
+app.delete("/delete/:id", async(req, res) => {
+    const id = req.params.id;
+    await ArtistModel.findByIdAndRemove(id).exec();
+    res.send('deleted')
+});
+
 app.listen(3002, () => { console.log("Server Running...") });

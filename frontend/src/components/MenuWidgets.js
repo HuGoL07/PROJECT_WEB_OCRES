@@ -11,6 +11,7 @@ import GetInfosUser from './GetInfosUser'
 import Graphic from './Graphic'
 import '../style/Graphic.css'
 import AddTracksToBdd from './AddTracksToBdd'
+import GetDataFromBdd from './GetDataFromBdd'
 
 function MenuWidgets({ code }) {
 
@@ -104,9 +105,11 @@ function MenuWidgets({ code }) {
                 {/*--- WIDGET 6 ---*/}
                             <div className='widget6-container'>
                                 <div className='widget6-banner'>
-                                    <div className='widget6-title'> Notre API</div>
+                                    <div className='widget6-title'> Votre collection</div>
                                 </div>
-                                
+                                <div className = 'data'>
+                                    <GetDataFromBdd/>
+                                </div>
                             </div>
             </div>
         </div>)
@@ -164,9 +167,11 @@ function MenuWidgets({ code }) {
                     {/*--- WIDGET 6 ---*/}
                     <div className='widget6-container'>
                         <div className='widget6-banner'>
-                            <div className='widget6-title'> Notre API</div>
+                            <div className='widget6-title'> Votre collection</div>
                         </div>
-                        
+                        <div className = 'data'>
+                            <GetDataFromBdd/>
+                        </div>
                     </div>
             </div>
         </div>)
