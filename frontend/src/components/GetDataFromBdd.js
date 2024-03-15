@@ -32,7 +32,7 @@ function GetDataFromBdd() {
         });
         alert('L artiste a bien ete supprimé ')
         console.log('Artiste bien supprimer sur votre bdd')
-    }
+    };
 
     return ( <
             div >
@@ -43,8 +43,8 @@ function GetDataFromBdd() {
                     div key = { key }
                     className = 'artist' >
                     <
-                    h3 > { val.artistName } < /h3>  <
-                    h2 > { val.nameAlbum } < /h2> <
+                    h3 > { val.artistName } < /h3>   <
+                    h2 > { val.nameAlbum } < /h2>  <
                     input type = "text"
                     placeholder = "Nouvel artist"
                     onChange = {
@@ -54,12 +54,11 @@ function GetDataFromBdd() {
 
                     <
                     button onClick = {
-                        () => updateName(val._id)
-                    } > Mettre à jour < /button> <
+                        () => updateName(val._id) } > Mettre à jour < /button>  <
                     button onClick = {
                         () => deleteArtist(val._id)
-                    } > Supprimer < /button> < /
-                    div >
+                    } > Supprimer < /button>  <
+                    /div >
                 )
             })
         } <

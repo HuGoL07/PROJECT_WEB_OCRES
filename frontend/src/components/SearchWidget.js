@@ -73,6 +73,7 @@ export default function SearchWidget({ accessToken }) {
 
     return ( 
         <Container className = 'widget_container' >
+
             <Form.Control type = "search" placeholder = "Chercher musique" value = { search } onChange = { e => setSearch(e.target.value) }
             style = {
                 { width: '50%' }
